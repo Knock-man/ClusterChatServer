@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/chatServer.dir/main.cpp.o  -o ../../../bin/chatServer  -lmuduo_net -lmuduo_base -lpthread 
