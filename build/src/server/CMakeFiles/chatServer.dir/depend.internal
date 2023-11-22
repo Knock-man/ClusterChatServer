@@ -4,13 +4,26 @@
 src/server/CMakeFiles/chatServer.dir/chatserver.cpp.o
  ../include/server/chatserver.h
  ../include/server/chatservice.h
- ../json/json.hpp
+ ../include/server/user.h
+ ../include/server/usermodel.h
+ ../thirdparty/json.hpp
  /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/chatserver.cpp
 src/server/CMakeFiles/chatServer.dir/chatservice.cpp.o
  ../include/public.h
  ../include/server/chatservice.h
- ../json/json.hpp
+ ../include/server/user.h
+ ../include/server/usermodel.h
+ ../thirdparty/json.hpp
  /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/chatservice.cpp
+src/server/CMakeFiles/chatServer.dir/db/db.cpp.o
+ ../include/server/db/db.h
+ /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/db.cpp
 src/server/CMakeFiles/chatServer.dir/main.cpp.o
  ../include/server/chatserver.h
+ ../include/server/db/db.h
  /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/main.cpp
+src/server/CMakeFiles/chatServer.dir/usermodel.cpp.o
+ ../include/server/db/db.h
+ ../include/server/user.h
+ ../include/server/usermodel.h
+ /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/usermodel.cpp
