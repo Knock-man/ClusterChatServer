@@ -125,6 +125,60 @@ chatServer/fast:
 	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/server/CMakeFiles/chatServer.dir/build.make src/server/CMakeFiles/chatServer.dir/build
 .PHONY : chatServer/fast
 
+chatserver.o: chatserver.cpp.o
+
+.PHONY : chatserver.o
+
+# target to build an object file
+chatserver.cpp.o:
+	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/server/CMakeFiles/chatServer.dir/build.make src/server/CMakeFiles/chatServer.dir/chatserver.cpp.o
+.PHONY : chatserver.cpp.o
+
+chatserver.i: chatserver.cpp.i
+
+.PHONY : chatserver.i
+
+# target to preprocess a source file
+chatserver.cpp.i:
+	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/server/CMakeFiles/chatServer.dir/build.make src/server/CMakeFiles/chatServer.dir/chatserver.cpp.i
+.PHONY : chatserver.cpp.i
+
+chatserver.s: chatserver.cpp.s
+
+.PHONY : chatserver.s
+
+# target to generate assembly for a file
+chatserver.cpp.s:
+	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/server/CMakeFiles/chatServer.dir/build.make src/server/CMakeFiles/chatServer.dir/chatserver.cpp.s
+.PHONY : chatserver.cpp.s
+
+chatservice.o: chatservice.cpp.o
+
+.PHONY : chatservice.o
+
+# target to build an object file
+chatservice.cpp.o:
+	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/server/CMakeFiles/chatServer.dir/build.make src/server/CMakeFiles/chatServer.dir/chatservice.cpp.o
+.PHONY : chatservice.cpp.o
+
+chatservice.i: chatservice.cpp.i
+
+.PHONY : chatservice.i
+
+# target to preprocess a source file
+chatservice.cpp.i:
+	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/server/CMakeFiles/chatServer.dir/build.make src/server/CMakeFiles/chatServer.dir/chatservice.cpp.i
+.PHONY : chatservice.cpp.i
+
+chatservice.s: chatservice.cpp.s
+
+.PHONY : chatservice.s
+
+# target to generate assembly for a file
+chatservice.cpp.s:
+	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/server/CMakeFiles/chatServer.dir/build.make src/server/CMakeFiles/chatServer.dir/chatservice.cpp.s
+.PHONY : chatservice.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -161,6 +215,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... chatServer"
+	@echo "... chatserver.o"
+	@echo "... chatserver.i"
+	@echo "... chatserver.s"
+	@echo "... chatservice.o"
+	@echo "... chatservice.i"
+	@echo "... chatservice.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

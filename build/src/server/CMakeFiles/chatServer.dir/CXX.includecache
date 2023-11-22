@@ -6,7 +6,15 @@
 
 #IncludeRegexTransform: 
 
+../include/server/chatserver.h
+muduo/net/TcpServer.h
+-
+muduo/net/EventLoop.h
+-
+
 /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/main.cpp
 iostream
 -
+chatserver.h
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/chatserver.h
 
