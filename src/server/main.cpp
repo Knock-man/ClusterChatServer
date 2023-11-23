@@ -1,12 +1,21 @@
 #include<iostream>
+#include<signal.h>
+
 #include "db.h"
+#include "chatservice.h"
 #include "chatserver.h"
 
 using namespace std;
-
+//处理服务器ctrl+c结束后，重置user的状态信息
+void resetHandler(int signal)
+{
+    ChatService::instance()->reset();
+    exit(0);
+}
 int main(){
+    signal(SIGINT,resetHandler);
     EventLoop loop;
-    InetAddress addr("127.0.0.1",8909);
+    InetAddress addr("127.0.0.1",8122);
     ChatServer server(&loop,addr,"chatserver");
     server.start();
     loop.loop();

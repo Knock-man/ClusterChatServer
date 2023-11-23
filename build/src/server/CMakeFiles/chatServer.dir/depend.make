@@ -28,7 +28,13 @@ src/server/CMakeFiles/chatServer.dir/friendmodel.cpp.o: ../include/server/user.h
 src/server/CMakeFiles/chatServer.dir/friendmodel.cpp.o: ../src/server/friendmodel.cpp
 
 src/server/CMakeFiles/chatServer.dir/main.cpp.o: ../include/server/chatserver.h
+src/server/CMakeFiles/chatServer.dir/main.cpp.o: ../include/server/chatservice.h
 src/server/CMakeFiles/chatServer.dir/main.cpp.o: ../include/server/db/db.h
+src/server/CMakeFiles/chatServer.dir/main.cpp.o: ../include/server/friendmodel.h
+src/server/CMakeFiles/chatServer.dir/main.cpp.o: ../include/server/offlinemessagemodel.h
+src/server/CMakeFiles/chatServer.dir/main.cpp.o: ../include/server/user.h
+src/server/CMakeFiles/chatServer.dir/main.cpp.o: ../include/server/usermodel.h
+src/server/CMakeFiles/chatServer.dir/main.cpp.o: ../thirdparty/json.hpp
 src/server/CMakeFiles/chatServer.dir/main.cpp.o: ../src/server/main.cpp
 
 src/server/CMakeFiles/chatServer.dir/offlinemessagemodel.cpp.o: ../include/server/db/db.h

@@ -55,8 +55,6 @@ User UserModel::query(int id)
                 return user;
             }
         }
-       
-
     }
     return User();
 }
@@ -75,4 +73,18 @@ bool UserModel::updateState(User &user)
     }
     return false;
 }
+
+//重置用户的状态信息
+void UserModel::resetState()
+{
+    //组装sql语句
+    char sql[1024]={0};
+    sprintf(sql,"update User set state = 'offline' where state = 'online'");
+    //2 建立连接 执行sql语句
+    Mysql mysql;
+    if(mysql.connect()){
+        mysql.update(sql);
+    }
+}
+
 #endif

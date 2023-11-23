@@ -177,7 +177,13 @@ void ChatService::addFriend(const TcpConnectionPtr &conn,json &js,Timestamp time
     }
     
  }
-
+//服务器异常，业务重置方法
+void ChatService::reset()
+{
+    //把所online状态的用户，设置成offline
+    _userModel.resetState();
+    exit(0);
+}
  //处理客户端异常退出
 void ChatService::clientCloseException(const TcpConnectionPtr &conn)
 {
