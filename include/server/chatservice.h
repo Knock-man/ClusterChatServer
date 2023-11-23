@@ -3,9 +3,12 @@
 #include<unordered_map>
 #include<muduo/net/TcpConnection.h>
 #include<functional>
+#include<mutex>
 
+#include "friendmodel.h"
 #include "json.hpp"
 #include "usermodel.h"
+#include "offlinemessagemodel.h"
 using namespace std;
 using namespace muduo::net;
 using namespace muduo;
@@ -26,13 +29,30 @@ public:
     void login(const TcpConnectionPtr &conn,json &js,Timestamp time);
     //处理注册业务
     void regster(const TcpConnectionPtr &conn,json &js,Timestamp time);
+    //添加好友业务
+    void addFriend(const TcpConnectionPtr &conn,json &js,Timestamp time);
+    //一对一聊天业务
+    void oneChat(const TcpConnectionPtr &conn,json &js,Timestamp time);
+
     //获取消息对应的处理器
     MsgHandler getHandle(int msgid);
+
+    //处理客户端异常退出
+    void clientCloseException(const TcpConnectionPtr &conn);
 private:
     ChatService();
     //存储消息id和对应的业务处理方法
     unordered_map<int,MsgHandler> _msgHandleMap;
 
+    //存储在线用户的通信连接
+    unordered_map<int,TcpConnectionPtr> _userConectionMap;
+
+    //定义互斥锁保证_userConectionMap的线程安全
+    mutex _connMutex;
     //数据操作类对象
     UserModel _userModel;
+    OfflineMsgModel _offlineMsgMode;
+
+    //好友操作类对象
+    FriendModel _friendModel;
  };

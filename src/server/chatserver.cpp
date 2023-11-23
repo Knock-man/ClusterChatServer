@@ -1,6 +1,7 @@
 #include "chatserver.h"
 #include "chatservice.h"
 #include "json.hpp"
+#include <muduo/base/Logging.h>
 #include <functional>
 #include <iostream>
 using namespace std;
@@ -33,6 +34,8 @@ void ChatServer::onConnection(const TcpConnectionPtr &conn)
     //客户端断开连接
     if(!conn->connected())
     {
+        //处理客户端异常退出逻辑
+        ChatService::instance()->clientCloseException(conn);
         conn->shutdown();
     }
 }

@@ -4,6 +4,8 @@
 src/server/CMakeFiles/chatServer.dir/chatserver.cpp.o
  ../include/server/chatserver.h
  ../include/server/chatservice.h
+ ../include/server/friendmodel.h
+ ../include/server/offlinemessagemodel.h
  ../include/server/user.h
  ../include/server/usermodel.h
  ../thirdparty/json.hpp
@@ -11,6 +13,8 @@ src/server/CMakeFiles/chatServer.dir/chatserver.cpp.o
 src/server/CMakeFiles/chatServer.dir/chatservice.cpp.o
  ../include/public.h
  ../include/server/chatservice.h
+ ../include/server/friendmodel.h
+ ../include/server/offlinemessagemodel.h
  ../include/server/user.h
  ../include/server/usermodel.h
  ../thirdparty/json.hpp
@@ -18,10 +22,19 @@ src/server/CMakeFiles/chatServer.dir/chatservice.cpp.o
 src/server/CMakeFiles/chatServer.dir/db/db.cpp.o
  ../include/server/db/db.h
  /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/db.cpp
+src/server/CMakeFiles/chatServer.dir/friendmodel.cpp.o
+ ../include/server/db/db.h
+ ../include/server/friendmodel.h
+ ../include/server/user.h
+ /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/friendmodel.cpp
 src/server/CMakeFiles/chatServer.dir/main.cpp.o
  ../include/server/chatserver.h
  ../include/server/db/db.h
  /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/main.cpp
+src/server/CMakeFiles/chatServer.dir/offlinemessagemodel.cpp.o
+ ../include/server/db/db.h
+ ../include/server/offlinemessagemodel.h
+ /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/offlinemessagemodel.cpp
 src/server/CMakeFiles/chatServer.dir/usermodel.cpp.o
  ../include/server/db/db.h
  ../include/server/user.h
