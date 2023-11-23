@@ -26,7 +26,7 @@ public:
     string getPwd(){ return password; }
     string getState(){ return state; }
 
-private:
+protected:
     int id;
     string name;
     string password;

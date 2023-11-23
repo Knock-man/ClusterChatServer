@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+../include/public.h
+
 ../include/server/chatserver.h
 muduo/net/TcpServer.h
 -
@@ -386,6 +388,48 @@ limits
 type_traits
 -
 
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/chatserver.cpp
+chatserver.h
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/chatserver.h
+chatservice.h
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/chatservice.h
+json.hpp
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/json.hpp
+muduo/base/Logging.h
+-
+functional
+-
+iostream
+-
+
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/chatservice.cpp
+public.h
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/public.h
+chatservice.h
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/chatservice.h
+usermodel.h
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/usermodel.h
+string
+-
+muduo/base/Logging.h
+-
+map
+-
+vector
+-
+
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/db.cpp
+db.h
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/db.h
+muduo/base/Logging.h
+-
+
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/friendmodel.cpp
+friendmodel.h
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/friendmodel.h
+db.h
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db.h
+
 /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/main.cpp
 iostream
 -
@@ -397,4 +441,18 @@ chatservice.h
 /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/chatservice.h
 chatserver.h
 /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/chatserver.h
+
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/offlinemessagemodel.cpp
+offlinemessagemodel.h
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/offlinemessagemodel.h
+db.h
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db.h
+
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/usermodel.cpp
+usermodel.h
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/usermodel.h
+db.h
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db.h
+iostream
+-
 
