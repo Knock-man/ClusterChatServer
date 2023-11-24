@@ -4,10 +4,11 @@ file(REMOVE_RECURSE
   "CMakeFiles/chatServer.dir/chatserver.cpp.o"
   "CMakeFiles/chatServer.dir/chatservice.cpp.o"
   "CMakeFiles/chatServer.dir/db/db.cpp.o"
-  "CMakeFiles/chatServer.dir/friendmodel.cpp.o"
   "CMakeFiles/chatServer.dir/main.cpp.o"
-  "CMakeFiles/chatServer.dir/offlinemessagemodel.cpp.o"
-  "CMakeFiles/chatServer.dir/usermodel.cpp.o"
+  "CMakeFiles/chatServer.dir/model/friendmodel.cpp.o"
+  "CMakeFiles/chatServer.dir/model/groupmodel.cpp.o"
+  "CMakeFiles/chatServer.dir/model/offlinemessagemodel.cpp.o"
+  "CMakeFiles/chatServer.dir/model/usermodel.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

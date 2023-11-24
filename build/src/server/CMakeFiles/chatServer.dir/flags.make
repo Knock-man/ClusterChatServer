@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/include -I/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/include/server -I/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/include/server/db -I/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/thirdparty 
+CXX_INCLUDES = -I/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/include -I/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/include/server -I/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/include/server/db -I/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/include/server/model -I/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/thirdparty 
 

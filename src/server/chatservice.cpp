@@ -19,6 +19,9 @@ ChatService::ChatService()
    _msgHandleMap[REG_MSG] = bind(&ChatService::regster,this,_1,_2,_3);
    _msgHandleMap[ADD_FRIEND_MSG] = bind(&ChatService::addFriend,this,_1,_2,_3);
    _msgHandleMap[ONE_CHAT_MSG] = bind(&ChatService::oneChat,this,_1,_2,_3);
+   _msgHandleMap[CREATE_GROUP_MSG] = bind(&ChatService::createGroup,this,_1,_2,_3);
+   _msgHandleMap[ADD_GROUP_MSG] = bind(&ChatService::addGroup,this,_1,_2,_3);
+    _msgHandleMap[GROUP_CHAT_MSG] = bind(&ChatService::groupChat,this,_1,_2,_3);
 
 }
 
@@ -233,6 +236,52 @@ void ChatService::oneChat(const TcpConnectionPtr &conn,json &js,Timestamp time)
     }
     //toid不在线，存储离线消息
     _offlineMsgMode.insertOffMsg(toid,js.dump());
+}
 
+//创建群组业务
+void ChatService::createGroup(const TcpConnectionPtr &conn,json &js,Timestamp time)
+{
+    int userid = js["id"].get<int>();
+    string name = js["groupname"];
+    string desc = js["groupdesc"];
+
+    //存储新创建的群组消息
+    Group group(-1,name,desc);
+    if(_groupModel.createGroup(group))
+    {
+        //存储群组创建人信息
+        _groupModel.addGroup(userid,group.getId(),"creator");
+    }
     
 }
+
+//加入群组业务
+void ChatService::addGroup(const TcpConnectionPtr &conn,json &js,Timestamp time)
+{
+    int userid = js["id"].get<int>();
+    int groupid = js["groupid"].get<int>();
+    _groupModel.addGroup(userid,groupid,"normal");
+}
+
+//群组聊天业务
+void ChatService::groupChat(const TcpConnectionPtr &conn,json &js,Timestamp time)
+{
+    int userid = js["id"].get<int>();
+    int groupid = js["groupid"].get<int>();
+    vector<int> useridVec = _groupModel.queryGroupUsers(userid,groupid);//返回该用户所在群的所有成员
+    lock_guard<mutex> lock(_connMutex);
+    for(auto id : useridVec)//遍历所有userid
+    {    
+        auto it = _userConectionMap.find(id);//查找userid对应的连接
+        if(it != _userConectionMap.end())//该用户在线,在map表有连接
+        {
+            //转发消息
+            it->second->send(js.dump());
+        }
+        else//该用户不在线
+        {
+            _offlineMsgMode.insertOffMsg(id,js.dump());
+        }
+    }
+}
+

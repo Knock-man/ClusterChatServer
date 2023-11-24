@@ -5,6 +5,7 @@
 #include<functional>
 #include<mutex>
 
+#include "groupmodel.h"
 #include "friendmodel.h"
 #include "json.hpp"
 #include "usermodel.h"
@@ -34,6 +35,16 @@ public:
     //一对一聊天业务
     void oneChat(const TcpConnectionPtr &conn,json &js,Timestamp time);
 
+    //创建群组业务
+    void createGroup(const TcpConnectionPtr &conn,json &js,Timestamp time);
+
+    //加入群组业务
+    void addGroup(const TcpConnectionPtr &conn,json &js,Timestamp time);
+    //群组聊天业务
+    void groupChat(const TcpConnectionPtr &conn,json &js,Timestamp time);
+
+    
+
     //获取消息对应的处理器
     MsgHandler getHandle(int msgid);
 
@@ -58,4 +69,8 @@ private:
 
     //好友操作类对象
     FriendModel _friendModel;
+
+    //群组操作类
+    GroupModel _groupModel;
+    
  };
