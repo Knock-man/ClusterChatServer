@@ -15,7 +15,7 @@ void resetHandler(int signal)
 int main(){
     signal(SIGINT,resetHandler);
     EventLoop loop;
-    InetAddress addr("127.0.0.1",8122);
+    InetAddress addr("127.0.0.1",9401);
     ChatServer server(&loop,addr,"chatserver");
     server.start();
     loop.loop();

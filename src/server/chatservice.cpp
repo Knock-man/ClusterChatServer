@@ -52,7 +52,6 @@ void ChatService::login(const TcpConnectionPtr &conn,json &js,Timestamp time)
         }
         else
         {
-        
             {
                 //登录成功记录用户连接信息
                 lock_guard<mutex> lock(_connMutex);
@@ -70,6 +69,7 @@ void ChatService::login(const TcpConnectionPtr &conn,json &js,Timestamp time)
         response["id"] = user.getId();
         response["name"] = user.getName();
         response["errmsg"] = "用户名登录成功";
+
         //查询该用户是否有离线消息
         vector<string> vec = _offlineMsgMode.queryOffMsg(id);
         if( !vec.empty() )
@@ -92,11 +92,35 @@ void ChatService::login(const TcpConnectionPtr &conn,json &js,Timestamp time)
                 js["state"] = user.getState();
                 vec.push_back(js.dump());
             }
-            response["friend"] = vec;
+            response["friends"] = vec;
         }
-        
 
-
+        //查询用户的群组信息
+        vector<Group> groupuserVec = _groupModel.queryGroup(id);
+        if(!groupuserVec.empty())
+        {
+            vector<string> groupV;
+            for(Group &group : groupuserVec)
+            {
+                json grpjson;
+                grpjson["id"] = group.getId();
+                grpjson["groupname"] = group.getName();
+                grpjson["groupdesc"] = group.getDesc();
+                vector<string> userV;
+                for(GroupUser &user :group.getUsers())
+                {
+                    json js;
+                    js["id"] = user.getId();
+                    js["name"] = user.getName();
+                    js["state"] = user.getState();
+                    js["role"] = user.getRole();
+                    userV.push_back(js.dump());
+                }
+                grpjson["users"] = userV;
+                groupV.push_back(grpjson.dump());
+            }
+            response["groups"] = groupV;
+        }
 
         conn->send(response.dump());//发回客户端
         }
@@ -226,7 +250,7 @@ void ChatService::oneChat(const TcpConnectionPtr &conn,json &js,Timestamp time)
     {
         lock_guard<mutex> lock(_connMutex);
         auto it = _userConectionMap.find(toid);
-        if(it != _userConectionMap.end())
+        if(it != _userConectionMap.end())//在线
         {
             //toid在线，转发消息 服务器主动推送消息给toid用户
            it->second->send(js.dump());
@@ -234,8 +258,8 @@ void ChatService::oneChat(const TcpConnectionPtr &conn,json &js,Timestamp time)
 
         }
     }
-    //toid不在线，存储离线消息
-    _offlineMsgMode.insertOffMsg(toid,js.dump());
+    // toid不在线，存储离线消息
+    _offlineMsgMode.insertOffMsg(toid, js.dump());
 }
 
 //创建群组业务

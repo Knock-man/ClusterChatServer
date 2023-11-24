@@ -42,3 +42,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/client/cmake_install.cmake")
+endif()
+
