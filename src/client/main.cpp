@@ -6,10 +6,9 @@
 #include <chrono>
 #include <ctime>
 #include <unordered_map>
+#include <iomanip>
+#include <sstream>
 #include <functional>
-using namespace std;
-using json = nlohmann::json;
-
 #include <unistd.h>
 #include <sys/socket.h>
 #include <sys/types.h>
@@ -21,6 +20,9 @@ using json = nlohmann::json;
 #include "group.h"
 #include "user.h"
 #include "public.h"
+
+using namespace std;
+using json = nlohmann::json;
 
 //记录当前系统登录的用户信息
 User g_currentUser;
@@ -39,6 +41,9 @@ void readTaskHandler(int clientfd);
 
 //获取系统时间(聊天信息需要添加时间信息)
 string getCurrentTime();
+
+//主菜单页面程序
+bool ismainMenuRuning = false;
 
 //主聊天页面程序
 void mainMenu(int clientfd);
@@ -83,11 +88,11 @@ int main(int argc,char *argv[])
     {
         //显示首页面菜单 登录 注册 退出
         cout<<"{============首页==============}"<<endl;
-        cout<<"1.登录"<<endl;
-        cout<<"2.注册"<<endl;
-        cout<<"3.退出"<<endl;
+        cout<<"            "<<"1.登录"<<endl;
+        cout<<"            "<<"2.注册"<<endl;
+        cout<<"            "<<"3.退出"<<endl;
         cout<<"{==============================}"<<endl;
-        cout<<"选择:";
+        cout<<"          "<<"选择:";
         int choice = 0;
         cin>>choice;
         cin.get();//读取器缓冲区残留的回车 输入一个整数，再读取字符串，需要将回车字符读掉，否则字符串会将回车字符读掉
@@ -99,10 +104,10 @@ int main(int argc,char *argv[])
                 //登录
                 int id =0;
                 char pwd[50] = {0};
-                cout<<"账号:";
+                cout<<"        "<<"账号:";
                 cin>>id;
                 cin.get();
-                cout<<"密码:";
+                cout<<"        "<<"密码:";
                 cin.getline(pwd,50);
 
                 json js;
@@ -118,14 +123,14 @@ int main(int argc,char *argv[])
                 }
                 else
                 {
-                    char buffer[1024] = {0};
+                    char buffer[900024] = {0};
                     len = recv(clientfd,buffer,sizeof(buffer),0);
                     if(len == -1)
                     {
                         cerr<<"recv login response error"<<endl;
                     }
                     else
-                    {   
+                    {  
                         json responsejs = json::parse(buffer);
                         if(responsejs["errno"].get<int>() != 0)//登录失败
                         {
@@ -137,10 +142,10 @@ int main(int argc,char *argv[])
                             //记录当前用户的id和name
                             g_currentUser.setId(responsejs["id"].get<int>());
                             g_currentUser.setName(responsejs["name"]);
-
-                            //记录当前用户的还有列表信息
+                            //记录当前用户的好友列表信息
                             if(responsejs.contains("friends"))//当前用户有无好友
                             {
+                                g_currentUserFriendList.clear();
                                 vector<string> vec = responsejs["friends"];
                                 for(string &str : vec)
                                 {
@@ -153,10 +158,11 @@ int main(int argc,char *argv[])
                                 }
 
                             }
-
+                           // cout<<"保存用户好友成功<<"<<endl;
                             //记录当前用户的群组列表信息
                             if(responsejs.contains("groups"))
                             {
+                                g_currentUserGroupList.clear();
                                 vector<string> vec1 = responsejs["groups"];
                                 for(string &groupstr : vec1)
                                 {
@@ -181,17 +187,17 @@ int main(int argc,char *argv[])
                                     g_currentUserGroupList.push_back(group);
                                 }
                             }
-
+                            //cout<<"保存用户群组成功"<<endl;
                             //显示登录用户的基本信息
                             showCurrentUserData();
-
+                            //cout<<"显示基本信息完成"<<endl;
                             //显示当前用户的离线信息 个人聊天信息或者群组信息
                             if(responsejs.contains("offlinemsg"))
                             {
                                 vector<string> vec = responsejs["offlinemsg"];
                                 for(string &str : vec)
                                 {
-                                    cout<<"离线jsonzi字符串格式:"<<str<<endl;
+                                   // cout<<"客户端登录离线json=:"<<str<<endl;
                                     json js = json::parse(str);
                                     
                                      int msgType = js["msgid"].get<int>();
@@ -210,11 +216,18 @@ int main(int argc,char *argv[])
                                 }
                             }
 
-                            //登录成功后，启动接受线程负责接受数据
-                            thread readTask(readTaskHandler,clientfd);
-                            readTask.detach();
+                            //登录成功后，启动接受线程负责接受数据，该线程只启动一次
+                            static int threadNumber = 0;
+                            if(threadNumber == 0)
+                            {
+                                thread readTask(readTaskHandler,clientfd);
+                                readTask.detach();
+                                threadNumber++;
+                            }
+                            
 
                             //进入聊天主菜单页面
+                            ismainMenuRuning = true;
                             mainMenu(clientfd);
 
 
@@ -288,30 +301,31 @@ int main(int argc,char *argv[])
 //显示当前登录成功用户的基本信息
 void showCurrentUserData()
 {
+    system("clear");
     cout<<endl<<"{============================登录用户============================}"<<endl;
     cout<<"                        账号:"<<g_currentUser.getId()<<"    姓名:"<<g_currentUser.getName()<<endl;
-    cout<<"---------------------------好友列表---------------------------"<<endl;
+    cout<<"    -------------------------好友列表-----------------------      "<<endl;
     if(!g_currentUserFriendList.empty())
     {
         for(User &user:g_currentUserFriendList)
         {
-            cout<<user.getId()<<" "<<user.getName()<<" "<<user.getState()<<endl;
+            cout<<"                        "<<user.getId()<<" "<<user.getName()<<" "<<user.getState()<<endl;
         }
     }
-    cout<<"----------------------------群组列表------------------------------"<<endl;
+    cout<<"    -------------------------群组成员-----------------------      "<<endl;
     if(!g_currentUserGroupList.empty())
     {
         for(Group &group : g_currentUserGroupList)
         {
-            cout<<"[群号："<<group.getId()<<" 群名："<<group.getName()<<" 群介绍："<<group.getDesc()<<"]"<<endl;
-            cout<<"                   群成员"<<endl;
+            cout<<"    "<<"[群号："<<group.getId()<<" 群名："<<group.getName()<<" 群介绍："<<group.getDesc()<<"]"<<endl;
+            cout<<"                           成员"<<endl;
             for(GroupUser &user : group.getUsers())
             {
-                cout<<"       "<<"账号:"<<user.getId()<<"  姓名:"<<user.getName()<<" 在线:"<<user.getState()<<" 角色:"<<user.getRole()<<endl;
+                cout<<"            "<<"账号:"<<user.getId()<<"  姓名:"<<user.getName()<<" 在线:"<<user.getState()<<" 角色:"<<user.getRole()<<endl;
             }
         }cout<<endl;
     }
-    cout<<"{==================================================================}"<<endl<<endl;;
+    cout<<"{==================================================================}"<<endl;;
 }
 
 // "help" command handler
@@ -331,13 +345,13 @@ void loginout(int, string);
 
 // 系统支持的客户端命令列表
 unordered_map<string, string> commandMap = {
-    {"显示所有支持的命令","格式 help"},
-    { "一对一聊天","格式 chat:friendid:message"},
-    { "添加好友","格式 addfriend:friendid"},
-    {"创建群组","格式 creategroup:groupname:groupdesc"},
-    {"加入群组","格式 addgroup:groupid"},
-    {"群聊","格式 groupchat:groupid:message"},
-    {"注销","格式 loginout"}};
+    {"显示所有支持的命令","help"},
+    { "一对一聊天","chat:friendid:message"},
+    { "添加好友","addfriend:friendid"},
+    {"创建群组","creategroup:groupname:groupdesc"},
+    {"加入群组","addgroup:groupid"},
+    {"群聊","groupchat:groupid:message"},
+    {"注销","loginout"}};
 
 // 注册系统支持的客户端命令处理
 unordered_map<string, function<void(int, string)>> commandHandlerMap = {
@@ -354,9 +368,8 @@ void mainMenu(int clientfd)
 {
     help();
     char buffer[1024]={0};
-    for(;;)
+    while(ismainMenuRuning)
     {
-        cout<<"操作命令：";
         cin.getline(buffer,1024);
         string commandbuf(buffer);
         string command;//命令
@@ -387,17 +400,17 @@ void mainMenu(int clientfd)
 }
 void help(int,string)
 {
-    cout<<"--可支持命令列表--"<<endl;
+    cout<<"                      "<<"----可支持命令列表----"<<endl;
     for(auto &p : commandMap)
     {
-        cout<<p.first<<":"<<p.second<<endl;
+        cout<<"               "<<p.first<<"："<<p.second<<endl;
     }
+    cout<<"===========================[聊天框]==================================";
     cout<<endl;
 }
 // "chat" command handler
 void chat(int clientfd, string str)
 {
-    //cout<<endl<<"=====================[聊天框]========================"<<endl;
     int idx = str.find(":");// str = friendid:message
     if(-1 == idx)
     {
@@ -415,6 +428,7 @@ void chat(int clientfd, string str)
     js["name"] = g_currentUser.getName();
     js["toid"] = friendid;
     js["msg"] = message;
+    //cout<<"main 417 客户端一对一聊天 js[msg]="<<message<<endl;
     js["time"] = getCurrentTime();
     string buffer = js.dump();
 
@@ -514,16 +528,26 @@ void groupchat(int clientfd,string str)
     }
 
 }
-// "loginout" command handler
-void loginout(int, string)
+// 注销
+void loginout(int clientfd,string str)
 {
+    json js;
+    js["msgid"] = LOGINOUT_MSG;
+    js["id"] = g_currentUser.getId();
+    string buffer = js.dump();
+    int len = send(clientfd,buffer.c_str(),strlen(buffer.c_str())+1,0);
+    if(len == -1)
+    {
+        cerr<<"send loginout msg error ->"<<buffer<<endl;
+    }
 
+    ismainMenuRuning = false;
+    system("clear");
 }
 
 //接受线程
 void readTaskHandler(int clientfd)
 {
-    cout<<endl<<"=====================[聊天框]========================"<<endl;
     for(;;)
     {
         char buffer[1024] = {0};
@@ -556,5 +580,17 @@ void readTaskHandler(int clientfd)
 
 string getCurrentTime()
 {
-    return "2019:12:11:2:19";
+    std::time_t now = std::time(nullptr);
+    std::tm* timeinfo = std::localtime(&now);
+
+    std::ostringstream oss;
+    oss << std::setfill('0')
+        << std::setw(4) << timeinfo->tm_year + 1900 << "-" 
+        << std::setw(2) << timeinfo->tm_mon + 1     << "-" 
+        << std::setw(2) << timeinfo->tm_mday        << " "
+        << std::setw(2) << timeinfo->tm_hour        << ":"
+        << std::setw(2) << timeinfo->tm_min         << ":"
+        << std::setw(2) << timeinfo->tm_sec;
+
+    return oss.str();
 }

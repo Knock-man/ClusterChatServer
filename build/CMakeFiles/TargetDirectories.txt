@@ -7,4 +7,4 @@
 /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server/CMakeFiles/chatServer.dir
 /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/client/CMakeFiles/rebuild_cache.dir
 /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/client/CMakeFiles/edit_cache.dir
-/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/client/CMakeFiles/ChatClient.dir
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/client/CMakeFiles/chatClient.dir

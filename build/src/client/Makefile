@@ -111,19 +111,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/client/CMakeFiles/ChatClient.dir/rule:
-	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/ChatClient.dir/rule
-.PHONY : src/client/CMakeFiles/ChatClient.dir/rule
+src/client/CMakeFiles/chatClient.dir/rule:
+	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/chatClient.dir/rule
+.PHONY : src/client/CMakeFiles/chatClient.dir/rule
 
 # Convenience name for target.
-ChatClient: src/client/CMakeFiles/ChatClient.dir/rule
+chatClient: src/client/CMakeFiles/chatClient.dir/rule
 
-.PHONY : ChatClient
+.PHONY : chatClient
 
 # fast build rule for target.
-ChatClient/fast:
-	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/build
-.PHONY : ChatClient/fast
+chatClient/fast:
+	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/client/CMakeFiles/chatClient.dir/build.make src/client/CMakeFiles/chatClient.dir/build
+.PHONY : chatClient/fast
 
 main.o: main.cpp.o
 
@@ -131,7 +131,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/main.cpp.o
+	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/client/CMakeFiles/chatClient.dir/build.make src/client/CMakeFiles/chatClient.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -140,7 +140,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/main.cpp.i
+	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/client/CMakeFiles/chatClient.dir/build.make src/client/CMakeFiles/chatClient.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -149,7 +149,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/main.cpp.s
+	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/client/CMakeFiles/chatClient.dir/build.make src/client/CMakeFiles/chatClient.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -160,7 +160,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... ChatClient"
+	@echo "... chatClient"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -40,8 +40,12 @@ public:
 
     //加入群组业务
     void addGroup(const TcpConnectionPtr &conn,json &js,Timestamp time);
+
     //群组聊天业务
     void groupChat(const TcpConnectionPtr &conn,json &js,Timestamp time);
+
+    //处理注销业务
+    void loginout(const TcpConnectionPtr &conn,json &js,Timestamp time);
 
     
 

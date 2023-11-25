@@ -124,17 +124,17 @@ chatServer/fast:
 .PHONY : chatServer/fast
 
 #=============================================================================
-# Target rules for targets named ChatClient
+# Target rules for targets named chatClient
 
 # Build rule for target.
-ChatClient: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ChatClient
-.PHONY : ChatClient
+chatClient: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 chatClient
+.PHONY : chatClient
 
 # fast build rule for target.
-ChatClient/fast:
-	$(MAKE) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/build
-.PHONY : ChatClient/fast
+chatClient/fast:
+	$(MAKE) -f src/client/CMakeFiles/chatClient.dir/build.make src/client/CMakeFiles/chatClient.dir/build
+.PHONY : chatClient/fast
 
 # Help Target
 help:
@@ -145,7 +145,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... chatServer"
-	@echo "... ChatClient"
+	@echo "... chatClient"
 .PHONY : help
 
 

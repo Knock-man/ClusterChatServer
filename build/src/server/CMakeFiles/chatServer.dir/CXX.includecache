@@ -436,12 +436,6 @@ map
 vector
 -
 
-/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/db.cpp
-db.h
-/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/db.h
-muduo/base/Logging.h
--
-
 /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/main.cpp
 iostream
 -
@@ -453,32 +447,4 @@ chatservice.h
 /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/chatservice.h
 chatserver.h
 /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/chatserver.h
-
-/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/friendmodel.cpp
-friendmodel.h
-/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/friendmodel.h
-db.h
-/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/db.h
-
-/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/groupmodel.cpp
-groupmodel.h
-/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/groupmodel.h
-db.h
-/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/db.h
-groupuser.h
-/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/groupuser.h
-
-/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/offlinemessagemodel.cpp
-offlinemessagemodel.h
-/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/offlinemessagemodel.h
-db.h
-/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/db.h
-
-/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/usermodel.cpp
-usermodel.h
-/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/usermodel.h
-db.h
-/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/db.h
-iostream
--
 

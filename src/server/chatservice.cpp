@@ -21,7 +21,8 @@ ChatService::ChatService()
    _msgHandleMap[ONE_CHAT_MSG] = bind(&ChatService::oneChat,this,_1,_2,_3);
    _msgHandleMap[CREATE_GROUP_MSG] = bind(&ChatService::createGroup,this,_1,_2,_3);
    _msgHandleMap[ADD_GROUP_MSG] = bind(&ChatService::addGroup,this,_1,_2,_3);
-    _msgHandleMap[GROUP_CHAT_MSG] = bind(&ChatService::groupChat,this,_1,_2,_3);
+   _msgHandleMap[GROUP_CHAT_MSG] = bind(&ChatService::groupChat,this,_1,_2,_3);
+   _msgHandleMap[LOGINOUT_MSG] = bind(&ChatService::loginout,this,_1,_2,_3);
 
 }
 
@@ -75,6 +76,7 @@ void ChatService::login(const TcpConnectionPtr &conn,json &js,Timestamp time)
         if( !vec.empty() )
         {
             response["offlinemsg"] = vec;
+            
             //读取该用户的离线消息后，把该用户的所有离线消息删除掉
             _offlineMsgMode.removeOffMsg(id);
         }
@@ -121,7 +123,7 @@ void ChatService::login(const TcpConnectionPtr &conn,json &js,Timestamp time)
             }
             response["groups"] = groupV;
         }
-
+        //LOG_INFO<<"ChatService::login 78 登录返回客户端json="<<response.dump();
         conn->send(response.dump());//发回客户端
         }
         
@@ -246,7 +248,6 @@ void ChatService::oneChat(const TcpConnectionPtr &conn,json &js,Timestamp time)
 {
     //{"msgid": "fromid": "fromname":  "toid":  "msg": }
     int toid = js["toid"].get<int>();
-
     {
         lock_guard<mutex> lock(_connMutex);
         auto it = _userConectionMap.find(toid);
@@ -258,6 +259,7 @@ void ChatService::oneChat(const TcpConnectionPtr &conn,json &js,Timestamp time)
 
         }
     }
+    //LOG_INFO<<"260 服务器存储离线消息的json="<<js.dump();
     // toid不在线，存储离线消息
     _offlineMsgMode.insertOffMsg(toid, js.dump());
 }
@@ -309,3 +311,20 @@ void ChatService::groupChat(const TcpConnectionPtr &conn,json &js,Timestamp time
     }
 }
 
+//处理注销业务
+void ChatService::loginout(const TcpConnectionPtr &conn,json &js,Timestamp time)
+{
+    int userid = js["id"].get<int>();
+    {
+        lock_guard<mutex> lock(_connMutex);
+        auto it = _userConectionMap.find(userid);
+        if(it != _userConectionMap.end())
+        {
+            _userConectionMap.erase(it);
+        }
+    }
+    //更新用户的状态信息
+    User user(userid,"","","offline");
+    _userModel.updateState(user);
+            
+}

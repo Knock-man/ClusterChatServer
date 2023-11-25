@@ -92,7 +92,7 @@ src/clean: src/client/clean
 # Directory level rules for directory src/client
 
 # Recursive "all" directory target.
-src/client/all: src/client/CMakeFiles/ChatClient.dir/all
+src/client/all: src/client/CMakeFiles/chatClient.dir/all
 
 .PHONY : src/client/all
 
@@ -102,7 +102,7 @@ src/client/preinstall:
 .PHONY : src/client/preinstall
 
 # Recursive "clean" directory target.
-src/client/clean: src/client/CMakeFiles/ChatClient.dir/clean
+src/client/clean: src/client/CMakeFiles/chatClient.dir/clean
 
 .PHONY : src/client/clean
 
@@ -152,31 +152,31 @@ src/server/CMakeFiles/chatServer.dir/clean:
 .PHONY : src/server/CMakeFiles/chatServer.dir/clean
 
 #=============================================================================
-# Target rules for target src/client/CMakeFiles/ChatClient.dir
+# Target rules for target src/client/CMakeFiles/chatClient.dir
 
 # All Build rule for target.
-src/client/CMakeFiles/ChatClient.dir/all:
-	$(MAKE) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/depend
-	$(MAKE) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles --progress-num=1,2 "Built target ChatClient"
-.PHONY : src/client/CMakeFiles/ChatClient.dir/all
+src/client/CMakeFiles/chatClient.dir/all:
+	$(MAKE) -f src/client/CMakeFiles/chatClient.dir/build.make src/client/CMakeFiles/chatClient.dir/depend
+	$(MAKE) -f src/client/CMakeFiles/chatClient.dir/build.make src/client/CMakeFiles/chatClient.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles --progress-num=1,2 "Built target chatClient"
+.PHONY : src/client/CMakeFiles/chatClient.dir/all
 
 # Build rule for subdir invocation for target.
-src/client/CMakeFiles/ChatClient.dir/rule: cmake_check_build_system
+src/client/CMakeFiles/chatClient.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/ChatClient.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/chatClient.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles 0
-.PHONY : src/client/CMakeFiles/ChatClient.dir/rule
+.PHONY : src/client/CMakeFiles/chatClient.dir/rule
 
 # Convenience name for target.
-ChatClient: src/client/CMakeFiles/ChatClient.dir/rule
+chatClient: src/client/CMakeFiles/chatClient.dir/rule
 
-.PHONY : ChatClient
+.PHONY : chatClient
 
 # clean rule for target.
-src/client/CMakeFiles/ChatClient.dir/clean:
-	$(MAKE) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/clean
-.PHONY : src/client/CMakeFiles/ChatClient.dir/clean
+src/client/CMakeFiles/chatClient.dir/clean:
+	$(MAKE) -f src/client/CMakeFiles/chatClient.dir/build.make src/client/CMakeFiles/chatClient.dir/clean
+.PHONY : src/client/CMakeFiles/chatClient.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
