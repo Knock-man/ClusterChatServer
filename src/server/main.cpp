@@ -12,10 +12,13 @@ void resetHandler(int signal)
     ChatService::instance()->reset();
     exit(0);
 }
-int main(){
+int main(int argc, char *argv[]){
+    //解析通过命令行参数传递ip和port
+    char *ip = argv[1];
+    uint16_t port = atoi(argv[2]);
     signal(SIGINT,resetHandler);
     EventLoop loop;
-    InetAddress addr("127.0.0.1",8901);
+    InetAddress addr(ip,port);
     ChatServer server(&loop,addr,"chatserver");
     server.start();
     loop.loop();
@@ -35,7 +38,7 @@ int main(){
 {"msgid":6,"id":2,"friendid":4}
 
 聊天：
-{"msgid":5,"fromid":1,"fromname":"zhangsan","toid":4,"msg":"dsfds"}
+{"msgid":6,"fromid":1,"fromname":"zhangsan","toid":4,"msg":"dsfds"}
 
 
 */

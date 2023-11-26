@@ -11,6 +11,8 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/server) #指定头文件
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}//include/server/db) #指定头文件
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}//include/server/model) #指定头文件
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/thirdparty) #指定头文件
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/server/redis) #指定头文件
+
 
  
 #加载子目录

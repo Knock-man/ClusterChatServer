@@ -10,6 +10,7 @@
 #include "json.hpp"
 #include "usermodel.h"
 #include "offlinemessagemodel.h"
+#include  "redis.h"
 using namespace std;
 using namespace muduo::net;
 using namespace muduo;
@@ -47,6 +48,9 @@ public:
     //处理注销业务
     void loginout(const TcpConnectionPtr &conn,json &js,Timestamp time);
 
+    //redis消息队列中获取订阅消息
+    void handleRedisSubscribeMessage(int channel,string message);
+
     
 
     //获取消息对应的处理器
@@ -76,5 +80,8 @@ private:
 
     //群组操作类
     GroupModel _groupModel;
+
+    //redis操作对象
+    Redis _redis;
     
  };

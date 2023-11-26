@@ -11,6 +11,7 @@ src/server/CMakeFiles/chatServer.dir/chatserver.cpp.o
  ../include/server/model/offlinemessagemodel.h
  ../include/server/model/user.h
  ../include/server/model/usermodel.h
+ ../include/server/redis/redis.h
  ../thirdparty/json.hpp
  /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/chatserver.cpp
 src/server/CMakeFiles/chatServer.dir/chatservice.cpp.o
@@ -23,6 +24,7 @@ src/server/CMakeFiles/chatServer.dir/chatservice.cpp.o
  ../include/server/model/offlinemessagemodel.h
  ../include/server/model/user.h
  ../include/server/model/usermodel.h
+ ../include/server/redis/redis.h
  ../thirdparty/json.hpp
  /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/chatservice.cpp
 src/server/CMakeFiles/chatServer.dir/db/db.cpp.o
@@ -39,6 +41,7 @@ src/server/CMakeFiles/chatServer.dir/main.cpp.o
  ../include/server/model/offlinemessagemodel.h
  ../include/server/model/user.h
  ../include/server/model/usermodel.h
+ ../include/server/redis/redis.h
  ../thirdparty/json.hpp
  /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/main.cpp
 src/server/CMakeFiles/chatServer.dir/model/friendmodel.cpp.o
@@ -62,3 +65,6 @@ src/server/CMakeFiles/chatServer.dir/model/usermodel.cpp.o
  ../include/server/model/user.h
  ../include/server/model/usermodel.h
  /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/usermodel.cpp
+src/server/CMakeFiles/chatServer.dir/redis/redis.cpp.o
+ ../include/server/redis/redis.h
+ /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/redis/redis.cpp

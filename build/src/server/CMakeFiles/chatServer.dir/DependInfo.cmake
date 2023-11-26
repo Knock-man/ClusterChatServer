@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/groupmodel.cpp" "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server/CMakeFiles/chatServer.dir/model/groupmodel.cpp.o"
   "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/offlinemessagemodel.cpp" "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server/CMakeFiles/chatServer.dir/model/offlinemessagemodel.cpp.o"
   "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/usermodel.cpp" "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server/CMakeFiles/chatServer.dir/model/usermodel.cpp.o"
+  "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/redis/redis.cpp" "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server/CMakeFiles/chatServer.dir/redis/redis.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -22,6 +23,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include/server/db"
   "../include/server/model"
   "../thirdparty"
+  "../include/server/redis"
   )
 
 # Targets to which this target links.

@@ -158,7 +158,6 @@ int main(int argc,char *argv[])
                                 }
 
                             }
-                           // cout<<"保存用户好友成功<<"<<endl;
                             //记录当前用户的群组列表信息
                             if(responsejs.contains("groups"))
                             {
@@ -187,10 +186,10 @@ int main(int argc,char *argv[])
                                     g_currentUserGroupList.push_back(group);
                                 }
                             }
-                            //cout<<"保存用户群组成功"<<endl;
+                            
                             //显示登录用户的基本信息
                             showCurrentUserData();
-                            //cout<<"显示基本信息完成"<<endl;
+                            
                             //显示当前用户的离线信息 个人聊天信息或者群组信息
                             if(responsejs.contains("offlinemsg"))
                             {
