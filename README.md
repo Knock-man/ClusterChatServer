@@ -9,7 +9,8 @@
 
 ***  
 ### 框架
-![image](https://github.com/Knock-man/ClusterChatServer/assets/66514322/36198b66-5548-45ae-953a-626a56e4cc06)
+![Uploading image.png…]()
+
 
 
 ### 快速运行
