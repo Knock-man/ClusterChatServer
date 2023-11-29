@@ -9,7 +9,8 @@
 
 ***  
 ### 框架
-![Uploading image.png…]()
+![image](https://github.com/Knock-man/ClusterChatServer/assets/66514322/8a5b9a23-333b-4469-801c-3cb96b337e34)
+
 
 
 
@@ -65,13 +66,19 @@ CREATE TABLE `offlineMessage` (
   `message` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3
 ```  
-* 修改数据库 include/server/db/db.h文件中的属性信息
+* 打开 mysql.json 文件配置数据库连接池基本信息
 ```sql
-string ip = "127.0.0.1";   #数据库服务器ip地址
-unsigned short port = 3306;  #数据库服务器端口
-string user = "xbj";  #数据库用户名
-string password = "xbj"; #数据库密码
-string dbname = "ClusterChat"; #数据库名称
+{
+    "ip": "127.0.0.1", //数据库服务器ip
+    "port": 3306, //端口
+    "username": "xbj", //用户名
+    "password": "xbj", //密码
+    "dbname": "ClusterChat", //数据库名
+    "initSize": 10, //初始连接池大小
+    "maxSize": 1024, //连接池最大容量
+    "maxIdleTime": 60, //连接最大空闲时间（秒）
+    "maxConnectionTimeQue": 100 //连接超时时间(毫秒)
+  }
 ```
 * nginx负载均衡端口配置 路径：/usr/local/nginx/nginx.conf  【单台服务器测试无需负载均衡可省略此步】
   ![image](https://github.com/Knock-man/ClusterChatServer/assets/66514322/9a0c861e-b8b4-420f-8c76-4faba2a6dde7)  
