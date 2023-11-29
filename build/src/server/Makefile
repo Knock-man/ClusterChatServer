@@ -179,6 +179,33 @@ chatservice.cpp.s:
 	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/server/CMakeFiles/chatServer.dir/build.make src/server/CMakeFiles/chatServer.dir/chatservice.cpp.s
 .PHONY : chatservice.cpp.s
 
+db/CommonConnectionPool.o: db/CommonConnectionPool.cpp.o
+
+.PHONY : db/CommonConnectionPool.o
+
+# target to build an object file
+db/CommonConnectionPool.cpp.o:
+	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/server/CMakeFiles/chatServer.dir/build.make src/server/CMakeFiles/chatServer.dir/db/CommonConnectionPool.cpp.o
+.PHONY : db/CommonConnectionPool.cpp.o
+
+db/CommonConnectionPool.i: db/CommonConnectionPool.cpp.i
+
+.PHONY : db/CommonConnectionPool.i
+
+# target to preprocess a source file
+db/CommonConnectionPool.cpp.i:
+	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/server/CMakeFiles/chatServer.dir/build.make src/server/CMakeFiles/chatServer.dir/db/CommonConnectionPool.cpp.i
+.PHONY : db/CommonConnectionPool.cpp.i
+
+db/CommonConnectionPool.s: db/CommonConnectionPool.cpp.s
+
+.PHONY : db/CommonConnectionPool.s
+
+# target to generate assembly for a file
+db/CommonConnectionPool.cpp.s:
+	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build && $(MAKE) -f src/server/CMakeFiles/chatServer.dir/build.make src/server/CMakeFiles/chatServer.dir/db/CommonConnectionPool.cpp.s
+.PHONY : db/CommonConnectionPool.cpp.s
+
 db/db.o: db/db.cpp.o
 
 .PHONY : db/db.o
@@ -383,6 +410,9 @@ help:
 	@echo "... chatservice.o"
 	@echo "... chatservice.i"
 	@echo "... chatservice.s"
+	@echo "... db/CommonConnectionPool.o"
+	@echo "... db/CommonConnectionPool.i"
+	@echo "... db/CommonConnectionPool.s"
 	@echo "... db/db.o"
 	@echo "... db/db.i"
 	@echo "... db/db.s"

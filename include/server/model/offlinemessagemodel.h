@@ -1,6 +1,8 @@
 #ifndef OFFLINEMESSAGEMODE_H
 #define OFFLINEMESSAGEMODE_H
 
+#include "CommonConnectionPool.h"
+
 #include<string>
 #include<vector>
 using namespace std;
@@ -8,6 +10,7 @@ using namespace std;
 class OfflineMsgModel
 {
 public:
+   
     //存储用户的离线消息
     void insertOffMsg(int userid,string msg);
 
@@ -16,6 +19,9 @@ public:
 
     //查询用户的离线消息
     vector<string> queryOffMsg(int userid);
+
+private:
+    ConnectionPool *_cp = ConnectionPool::getconnectionPool();;
 };
 
 #endif

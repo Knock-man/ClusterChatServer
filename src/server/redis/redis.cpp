@@ -3,7 +3,7 @@
 using namespace std;
 
 /***************************
- 订阅：//redisCommand = redisAppendCommand(命令添加到本地缓存) + redisBufferWrite(缓存命令刷新到服务器) + redisGetReply(从服务器获取命令的执行结果并返回)
+ 订阅：redisCommand = redisAppendCommand(命令添加到本地缓存) + redisBufferWrite(缓存命令刷新到服务器) + redisGetReply(从服务器获取命令的执行结果并返回)
  发布：redisCommand
  原理：因为订阅的过程中会阻塞，所以接受订阅通道的消息（redisGetReply函数）需要开辟单独线程执行observer_channel_message
  
@@ -30,7 +30,7 @@ $ redis-cli
  ****************************/
 
 Redis::Redis()
-    : _publish_context(nullptr), _subcribe_context(nullptr)
+    : _publish_context(nullptr), _subcribe_context(nullptr)//初始化上下文
 {
 }
 

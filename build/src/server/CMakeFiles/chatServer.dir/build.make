@@ -96,9 +96,22 @@ src/server/CMakeFiles/chatServer.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chatServer.dir/main.cpp.s"
 	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/main.cpp -o CMakeFiles/chatServer.dir/main.cpp.s
 
+src/server/CMakeFiles/chatServer.dir/db/CommonConnectionPool.cpp.o: src/server/CMakeFiles/chatServer.dir/flags.make
+src/server/CMakeFiles/chatServer.dir/db/CommonConnectionPool.cpp.o: ../src/server/db/CommonConnectionPool.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/server/CMakeFiles/chatServer.dir/db/CommonConnectionPool.cpp.o"
+	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chatServer.dir/db/CommonConnectionPool.cpp.o -c /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/CommonConnectionPool.cpp
+
+src/server/CMakeFiles/chatServer.dir/db/CommonConnectionPool.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chatServer.dir/db/CommonConnectionPool.cpp.i"
+	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/CommonConnectionPool.cpp > CMakeFiles/chatServer.dir/db/CommonConnectionPool.cpp.i
+
+src/server/CMakeFiles/chatServer.dir/db/CommonConnectionPool.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chatServer.dir/db/CommonConnectionPool.cpp.s"
+	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/CommonConnectionPool.cpp -o CMakeFiles/chatServer.dir/db/CommonConnectionPool.cpp.s
+
 src/server/CMakeFiles/chatServer.dir/db/db.cpp.o: src/server/CMakeFiles/chatServer.dir/flags.make
 src/server/CMakeFiles/chatServer.dir/db/db.cpp.o: ../src/server/db/db.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/server/CMakeFiles/chatServer.dir/db/db.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/server/CMakeFiles/chatServer.dir/db/db.cpp.o"
 	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chatServer.dir/db/db.cpp.o -c /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/db.cpp
 
 src/server/CMakeFiles/chatServer.dir/db/db.cpp.i: cmake_force
@@ -111,7 +124,7 @@ src/server/CMakeFiles/chatServer.dir/db/db.cpp.s: cmake_force
 
 src/server/CMakeFiles/chatServer.dir/model/friendmodel.cpp.o: src/server/CMakeFiles/chatServer.dir/flags.make
 src/server/CMakeFiles/chatServer.dir/model/friendmodel.cpp.o: ../src/server/model/friendmodel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/server/CMakeFiles/chatServer.dir/model/friendmodel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/server/CMakeFiles/chatServer.dir/model/friendmodel.cpp.o"
 	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chatServer.dir/model/friendmodel.cpp.o -c /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/friendmodel.cpp
 
 src/server/CMakeFiles/chatServer.dir/model/friendmodel.cpp.i: cmake_force
@@ -124,7 +137,7 @@ src/server/CMakeFiles/chatServer.dir/model/friendmodel.cpp.s: cmake_force
 
 src/server/CMakeFiles/chatServer.dir/model/groupmodel.cpp.o: src/server/CMakeFiles/chatServer.dir/flags.make
 src/server/CMakeFiles/chatServer.dir/model/groupmodel.cpp.o: ../src/server/model/groupmodel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/server/CMakeFiles/chatServer.dir/model/groupmodel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/server/CMakeFiles/chatServer.dir/model/groupmodel.cpp.o"
 	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chatServer.dir/model/groupmodel.cpp.o -c /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/groupmodel.cpp
 
 src/server/CMakeFiles/chatServer.dir/model/groupmodel.cpp.i: cmake_force
@@ -137,7 +150,7 @@ src/server/CMakeFiles/chatServer.dir/model/groupmodel.cpp.s: cmake_force
 
 src/server/CMakeFiles/chatServer.dir/model/offlinemessagemodel.cpp.o: src/server/CMakeFiles/chatServer.dir/flags.make
 src/server/CMakeFiles/chatServer.dir/model/offlinemessagemodel.cpp.o: ../src/server/model/offlinemessagemodel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/server/CMakeFiles/chatServer.dir/model/offlinemessagemodel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/server/CMakeFiles/chatServer.dir/model/offlinemessagemodel.cpp.o"
 	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chatServer.dir/model/offlinemessagemodel.cpp.o -c /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/offlinemessagemodel.cpp
 
 src/server/CMakeFiles/chatServer.dir/model/offlinemessagemodel.cpp.i: cmake_force
@@ -150,7 +163,7 @@ src/server/CMakeFiles/chatServer.dir/model/offlinemessagemodel.cpp.s: cmake_forc
 
 src/server/CMakeFiles/chatServer.dir/model/usermodel.cpp.o: src/server/CMakeFiles/chatServer.dir/flags.make
 src/server/CMakeFiles/chatServer.dir/model/usermodel.cpp.o: ../src/server/model/usermodel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/server/CMakeFiles/chatServer.dir/model/usermodel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/server/CMakeFiles/chatServer.dir/model/usermodel.cpp.o"
 	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chatServer.dir/model/usermodel.cpp.o -c /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/usermodel.cpp
 
 src/server/CMakeFiles/chatServer.dir/model/usermodel.cpp.i: cmake_force
@@ -163,7 +176,7 @@ src/server/CMakeFiles/chatServer.dir/model/usermodel.cpp.s: cmake_force
 
 src/server/CMakeFiles/chatServer.dir/redis/redis.cpp.o: src/server/CMakeFiles/chatServer.dir/flags.make
 src/server/CMakeFiles/chatServer.dir/redis/redis.cpp.o: ../src/server/redis/redis.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/server/CMakeFiles/chatServer.dir/redis/redis.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/server/CMakeFiles/chatServer.dir/redis/redis.cpp.o"
 	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chatServer.dir/redis/redis.cpp.o -c /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/redis/redis.cpp
 
 src/server/CMakeFiles/chatServer.dir/redis/redis.cpp.i: cmake_force
@@ -179,6 +192,7 @@ chatServer_OBJECTS = \
 "CMakeFiles/chatServer.dir/chatserver.cpp.o" \
 "CMakeFiles/chatServer.dir/chatservice.cpp.o" \
 "CMakeFiles/chatServer.dir/main.cpp.o" \
+"CMakeFiles/chatServer.dir/db/CommonConnectionPool.cpp.o" \
 "CMakeFiles/chatServer.dir/db/db.cpp.o" \
 "CMakeFiles/chatServer.dir/model/friendmodel.cpp.o" \
 "CMakeFiles/chatServer.dir/model/groupmodel.cpp.o" \
@@ -192,6 +206,7 @@ chatServer_EXTERNAL_OBJECTS =
 ../bin/chatServer: src/server/CMakeFiles/chatServer.dir/chatserver.cpp.o
 ../bin/chatServer: src/server/CMakeFiles/chatServer.dir/chatservice.cpp.o
 ../bin/chatServer: src/server/CMakeFiles/chatServer.dir/main.cpp.o
+../bin/chatServer: src/server/CMakeFiles/chatServer.dir/db/CommonConnectionPool.cpp.o
 ../bin/chatServer: src/server/CMakeFiles/chatServer.dir/db/db.cpp.o
 ../bin/chatServer: src/server/CMakeFiles/chatServer.dir/model/friendmodel.cpp.o
 ../bin/chatServer: src/server/CMakeFiles/chatServer.dir/model/groupmodel.cpp.o
@@ -200,7 +215,7 @@ chatServer_EXTERNAL_OBJECTS =
 ../bin/chatServer: src/server/CMakeFiles/chatServer.dir/redis/redis.cpp.o
 ../bin/chatServer: src/server/CMakeFiles/chatServer.dir/build.make
 ../bin/chatServer: src/server/CMakeFiles/chatServer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable ../../../bin/chatServer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable ../../../bin/chatServer"
 	cd /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chatServer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

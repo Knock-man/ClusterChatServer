@@ -27,6 +27,8 @@ groupmodel.h
 ../include/server/groupmodel.h
 friendmodel.h
 ../include/server/friendmodel.h
+CommonConnectionPool.h
+../include/server/CommonConnectionPool.h
 json.hpp
 ../include/server/json.hpp
 usermodel.h
@@ -36,8 +38,36 @@ offlinemessagemodel.h
 redis.h
 ../include/server/redis.h
 
+../include/server/db/CommonConnectionPool.h
+queue
+-
+mutex
+-
+atomic
+-
+thread
+-
+condition_variable
+-
+memory
+-
+functional
+-
+string
+-
+mysql/mysql.h
+-
+stdio.h
+-
+iostream
+-
+db.h
+../include/server/db/db.h
+
 ../include/server/db/db.h
 mysql/mysql.h
+-
+ctime
 -
 string
 -
@@ -47,6 +77,8 @@ vector
 -
 user.h
 ../include/server/model/user.h
+CommonConnectionPool.h
+../include/server/model/CommonConnectionPool.h
 
 ../include/server/model/group.h
 groupuser.h
@@ -57,6 +89,8 @@ vector
 -
 
 ../include/server/model/groupmodel.h
+CommonConnectionPool.h
+../include/server/model/CommonConnectionPool.h
 group.h
 ../include/server/model/group.h
 
@@ -65,6 +99,8 @@ user.h
 ../include/server/model/user.h
 
 ../include/server/model/offlinemessagemodel.h
+CommonConnectionPool.h
+../include/server/model/CommonConnectionPool.h
 string
 -
 vector
@@ -75,6 +111,8 @@ string
 -
 
 ../include/server/model/usermodel.h
+CommonConnectionPool.h
+../include/server/model/CommonConnectionPool.h
 user.h
 ../include/server/model/user.h
 
@@ -448,10 +486,28 @@ vector
 iostream
 -
 
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/CommonConnectionPool.cpp
+CommonConnectionPool.h
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/CommonConnectionPool.h
+muduo/base/Logging.h
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/muduo/base/Logging.h
+json.hpp
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/json.hpp
+fstream
+-
+
 /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/db.cpp
 db.h
 /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/db.h
 muduo/base/Logging.h
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/muduo/base/Logging.h
+string
+-
+mysql/mysql.h
+-
+stdio.h
+-
+iostream
 -
 
 /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/main.cpp
@@ -471,6 +527,8 @@ friendmodel.h
 /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/friendmodel.h
 db.h
 /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/db.h
+CommonConnectionPool.h
+/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/CommonConnectionPool.h
 
 /home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/groupmodel.cpp
 groupmodel.h

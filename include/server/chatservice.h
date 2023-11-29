@@ -7,6 +7,7 @@
 
 #include "groupmodel.h"
 #include "friendmodel.h"
+#include "CommonConnectionPool.h"
 #include "json.hpp"
 #include "usermodel.h"
 #include "offlinemessagemodel.h"
@@ -71,8 +72,10 @@ private:
 
     //定义互斥锁保证_userConectionMap的线程安全
     mutex _connMutex;
+
     //数据操作类对象
     UserModel _userModel;
+
     OfflineMsgModel _offlineMsgMode;
 
     //好友操作类对象
@@ -83,5 +86,7 @@ private:
 
     //redis操作对象
     Redis _redis;
+
+    
     
  };

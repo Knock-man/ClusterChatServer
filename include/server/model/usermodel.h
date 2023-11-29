@@ -1,6 +1,7 @@
 #ifndef USERMODEL_H
 #define USERMODEL_H
 
+#include "CommonConnectionPool.h"
 #include"user.h"
 
 //user表对的数据操作类
@@ -18,7 +19,8 @@ public:
 
     //重置用户的状态信息
     void resetState();
-    
+private:
+    ConnectionPool *_cp = ConnectionPool::getconnectionPool();
 };
 
 

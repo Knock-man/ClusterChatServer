@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/chatserver.cpp" "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server/CMakeFiles/chatServer.dir/chatserver.cpp.o"
   "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/chatservice.cpp" "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server/CMakeFiles/chatServer.dir/chatservice.cpp.o"
+  "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/CommonConnectionPool.cpp" "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server/CMakeFiles/chatServer.dir/db/CommonConnectionPool.cpp.o"
   "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/db/db.cpp" "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server/CMakeFiles/chatServer.dir/db/db.cpp.o"
   "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/main.cpp" "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server/CMakeFiles/chatServer.dir/main.cpp.o"
   "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/src/server/model/friendmodel.cpp" "/home/xbj/FuxianCode/fuxian_ClusterChat/ClusterChatServer/build/src/server/CMakeFiles/chatServer.dir/model/friendmodel.cpp.o"

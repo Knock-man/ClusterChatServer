@@ -91,6 +91,7 @@ void ChatService::login(const TcpConnectionPtr &conn,json &js,Timestamp time)
             //读取该用户的离线消息后，把该用户的所有离线消息删除掉
             _offlineMsgMode.removeOffMsg(id);
         }
+
         //查询该用户的好友信息并返回
         vector<User> userVec = _friendModel.query(id);
         if(!userVec.empty())//用户有好友
@@ -98,6 +99,7 @@ void ChatService::login(const TcpConnectionPtr &conn,json &js,Timestamp time)
             vector<string> vec;
             for(User &user : userVec)
             {
+                //将每一个好友的所有信息组成一个字符串
                 json js;
                 js["id"] = user.getId();
                 js["name"] = user.getName();
@@ -106,18 +108,19 @@ void ChatService::login(const TcpConnectionPtr &conn,json &js,Timestamp time)
             }
             response["friends"] = vec;
         }
+
         //查询用户的群组信息
         vector<Group> groupuserVec = _groupModel.queryGroup(id);
         if(!groupuserVec.empty())
         {
-            vector<string> groupV;
+            vector<string> groupV;//将每一个群信息组成一个字符串
             for(Group &group : groupuserVec)
             {
                 json grpjson;
                 grpjson["id"] = group.getId();
                 grpjson["groupname"] = group.getName();
                 grpjson["groupdesc"] = group.getDesc();
-                vector<string> userV;
+                vector<string> userV;//将群组里的每一个群友组成一个字符串
                 for(GroupUser &user :group.getUsers())
                 {
                     json js;
@@ -195,7 +198,7 @@ void ChatService::addFriend(const TcpConnectionPtr &conn,json &js,Timestamp time
     _friendModel.insert(userid,friendid);
 
 }
-//过去消息对应的回调函数
+//获取消息对应的回调函数
  MsgHandler ChatService::getHandle(int msgid)
  {
     //记录错误日志，msgid没有对应的事件处理回调

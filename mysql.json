@@ -1,0 +1,11 @@
+{
+    "ip": "127.0.0.1",
+    "port": 3306,
+    "username": "xbj",
+    "password": "xbj",
+    "dbname": "ClusterChat",
+    "initSize": 10,
+    "maxSize": 1024,
+    "maxIdleTime": 60,
+    "maxConnectionTimeQue": 100
+  }

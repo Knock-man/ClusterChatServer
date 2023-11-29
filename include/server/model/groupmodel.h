@@ -1,11 +1,13 @@
 #ifndef GROUPMODEL_H
 #define GROUPMODEL_H
 
+#include "CommonConnectionPool.h"
 #include "group.h"
 
 class GroupModel
 {
 public:
+   
     //创建群组
     bool createGroup(Group &group);
     //加入群组
@@ -14,6 +16,9 @@ public:
     vector<Group> queryGroup(int userid);
     //根据用户指定的group查询群组用户id列表，除userid自己，主要用户群聊业务给群组其他成员群发消息
     vector<int> queryGroupUsers(int userid,int groupid);
+
+private:
+    ConnectionPool *_cp = ConnectionPool::getconnectionPool();;
 };
 
 #endif
