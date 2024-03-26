@@ -54,12 +54,6 @@ CREATE TABLE `Friend` (
   PRIMARY KEY (`userid`,`friendid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3
 
-#创建群组好友表
-CREATE TABLE `Friend` (
-  `userid` int NOT NULL,
-  `friendid` int NOT NULL,
-  PRIMARY KEY (`userid`,`friendid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3
 
 #创建离线消息表
 CREATE TABLE `offlineMessage` (
