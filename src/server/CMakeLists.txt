@@ -9,3 +9,4 @@ add_executable(chatServer ${SRC_LIST} ${DB_LIST} ${MODEL_LIST} ${REDIS_LIST})
 
 #指定可执行链接时需要的动态库
 target_link_libraries(chatServer muduo_net muduo_base mysqlclient hiredis pthread) #连接动态库
+include_directories(/usr/local/include/hiredis)
