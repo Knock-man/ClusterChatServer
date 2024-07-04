@@ -27,6 +27,9 @@
 #创建数据库
 CREATE DATABASE ClusterChat
 
+#使用数据库
+USE ClusterChat;
+
 #创建用户表
 CREATE TABLE `User` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -78,6 +81,21 @@ CREATE TABLE `offlineMessage` (
 * nginx负载均衡端口配置 路径：/usr/local/nginx/nginx.conf  【单台服务器测试无需负载均衡可省略此步】
   ![image](https://github.com/Knock-man/ClusterChatServer/assets/66514322/9a0c861e-b8b4-420f-8c76-4faba2a6dde7)  
   配置两台服务器端口分别为 127.0.0.1:6000 和 127.0.0.1:6002 采用轮询方式负载均衡  nginx连接端口为8000 3次心跳 30秒进行一次心跳
+## 环境配置
+
+* 安装redis  
+  1.安装redis服务器  
+   ```
+   sudo apt-get install redis-server  
+   ```
+  2.安装redis客户端
+   ```
+  git clone https://github.com/redis/hirediss  
+  cd hiredis
+  make
+  sudo make install
+  ```
+
 * 编译
   ```bash
   ./autobuild.sh
