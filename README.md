@@ -65,18 +65,12 @@ CREATE TABLE `offlineMessage` (
 ## 环境配置
 
 * 安装redis  
-  1.安装redis服务器  
-   ```
-   sudo apt-get install redis-server  
-   ```
-  2.安装redis客户端
-   ```
-  git clone https://github.com/redis/hirediss  
-  cd hiredis
-  make
-  sudo make install
-  ```
-
+  参考：[redis安装](https://blog.csdn.net/Anterior_condyle/article/details/140225721?csdn_share_tail=%7B%22type%22%3A%22blog%22%2C%22rType%22%3A%22article%22%2C%22rId%22%3A%22140225721%22%2C%22source%22%3A%22Anterior_condyle%22%7D)
+* 安装muduo网络库  
+  参考：[muduo网络库安装](https://blog.csdn.net/qq_41453285/article/details/105104845?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522172023508216800197035703%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=172023508216800197035703&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~rank_v31_ecpm-2-105104845-null-null.nonecase&utm_term=ubuntu%E5%AE%89%E8%A3%85muduo&spm=1018.2226.3001.4450))  
+  头文件库文件位于：../build/release-install-cpp11  
+  注意：头文件和库文件记得拷贝到默认的路径下(/usr/inclue)(/usr/local/lib)  
+  
 * 编译
   ```bash
   ./autobuild.sh
