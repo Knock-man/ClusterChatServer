@@ -25,58 +25,39 @@
 * 数据库表准备
 ```sql
 #创建数据库
-CREATE DATABASE ClusterChat
-
+CREATE DATABASE ClusterChat;
 #使用数据库
 USE ClusterChat;
 
 #创建用户表
 CREATE TABLE `User` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `state` enum('online','offline') DEFAULT 'online',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3
-
+    `id` int NOT NULL AUTO_INCREMENT,
+    `name` varchar(50) NOT NULL,
+    `password` varchar(50) NOT NULL,
+    `state` enum('online', 'offline') DEFAULT 'online',
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `name` (`name`)
+) ENGINE = InnoDB AUTO_INCREMENT = 15 DEFAULT CHARSET = utf8mb3;
 #创建群组表
 CREATE TABLE `AllGroup` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `groupname` varchar(50) NOT NULL,
-  `groupdesc` varchar(200) DEFAULT '',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `groupname` (`groupname`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3
-
+    `id` int NOT NULL AUTO_INCREMENT,
+    `groupname` varchar(50) NOT NULL,
+    `groupdesc` varchar(200) DEFAULT '',
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `groupname` (`groupname`)
+) ENGINE = InnoDB AUTO_INCREMENT = 8 DEFAULT CHARSET = utf8mb3;
 #创建好友表
 -- Active: 1697722813029@@127.0.0.1@3306@ClusterChat
 CREATE TABLE `Friend` (
-  `userid` int NOT NULL,
-  `friendid` int NOT NULL,
-  PRIMARY KEY (`userid`,`friendid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3
-
-
+    `userid` int NOT NULL,
+    `friendid` int NOT NULL,
+    PRIMARY KEY (`userid`, `friendid`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb3;
 #创建离线消息表
 CREATE TABLE `offlineMessage` (
-  `userid` int NOT NULL,
-  `message` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3
-```  
-* 打开 mysql.json 文件配置数据库连接池基本信息
-```sql
-{
-    "ip": "127.0.0.1", //数据库服务器ip
-    "port": 3306, //端口
-    "username": "xbj", //用户名
-    "password": "xbj", //密码
-    "dbname": "ClusterChat", //数据库名
-    "initSize": 10, //初始连接池大小
-    "maxSize": 1024, //连接池最大容量
-    "maxIdleTime": 60, //连接最大空闲时间（秒）
-    "maxConnectionTimeQue": 100 //连接超时时间(毫秒)
-  }
+    `userid` int NOT NULL,
+    `message` varchar(500) NOT NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb3;
 ```
 * nginx负载均衡端口配置 路径：/usr/local/nginx/nginx.conf  【单台服务器测试无需负载均衡可省略此步】
   ![image](https://github.com/Knock-man/ClusterChatServer/assets/66514322/9a0c861e-b8b4-420f-8c76-4faba2a6dde7)  
